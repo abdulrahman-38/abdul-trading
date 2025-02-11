@@ -27,6 +27,7 @@
             position: relative;
             display: flex;
             justify-content: center;
+            margin-bottom: 20px;
         }
 
         .ticker {
@@ -49,6 +50,22 @@
                 transform: translateX(-100%);
             }
         }
+
+        /* تنسيق الصورة */
+        .crypto-image {
+            width: 300px; /* حجم الصورة */
+            border-radius: 10px; /* زوايا دائرية */
+            margin-top: 20px;
+        }
+
+        /* تنسيق النص */
+        .crypto-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -61,6 +78,12 @@
             <!-- سيتم ملء الأسعار هنا تلقائيًا -->
         </div>
     </div>
+
+    <!-- صورة تحت الشريط -->
+    <img src="bitcoin.png" alt="Bitcoin Image" class="crypto-image">
+
+    <!-- العبارة تحت الصورة -->
+    <p class="crypto-text">Bitcoin will rule the world</p>
 
     <script>
         async function fetchCryptoPrices() {
