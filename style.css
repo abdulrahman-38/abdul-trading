@@ -1,0 +1,59 @@
+/* تنسيق الصفحة */
+body {
+    background-color: #f0f0f0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+/* شريط الأسعار */
+.ticker-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #222;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.ticker {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollTicker 15s linear infinite;
+}
+
+.ticker-item {
+    margin: 0 20px;
+    font-size: 18px;
+}
+
+/* الحركة المستمرة */
+@keyframes scrollTicker {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* تنسيق الصورة */
+.crypto-image {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* تنسيق النص */
+.crypto-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
