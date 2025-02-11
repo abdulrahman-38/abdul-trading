@@ -2,6 +2,12 @@ async function fetchCryptoPrices() {
     try {
         // جلب البيانات من CoinGecko API
         const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false');
+        
+        // التحقق مما إذا كان API يعمل بشكل صحيح
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
 
         // الحصول على العنصر HTML الذي سيحمل البيانات
@@ -18,13 +24,15 @@ async function fetchCryptoPrices() {
             tickerElement.appendChild(coinElement);
         });
 
+        console.log("✅ تم تحديث بيانات العملات بنجاح!");
     } catch (error) {
-        console.error("خطأ في جلب بيانات العملات الرقمية:", error);
+        console.error("❌ خطأ في جلب بيانات العملات الرقمية:", error);
     }
 }
 
-// جلب الأسعار عند تحميل الصفحة
+// تحديث الأسعار عند تحميل الصفحة
 fetchCryptoPrices();
 
-// تحديث الأسعار كل دقيقة
+// تحديث الأسعار كل 60 ثانية
 setInterval(fetchCryptoPrices, 60000);
+
