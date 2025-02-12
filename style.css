@@ -84,15 +84,15 @@ h1, h2 {
         }
 
         /* الحركة المستمرة */
-        @keyframes scrollTicker {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
-    </style>
+       @keyframes scrollTicker {
+    {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+</>
 </head>
 <body>
 
