@@ -151,3 +151,75 @@ h1, h2 {
 .social-icon:hover {
     transform: scale(1.1);
 }
+/* تحسين عرض الصفحة على الهواتف */
+@media screen and (max-width: 768px) {
+    /* القائمة الجانبية تتوسع لتملأ الشاشة عند فتحها */
+    .sidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+    /* زر القائمة يكون أكبر قليلاً لتسهيل الضغط عليه */
+    .menu-toggle {
+        font-size: 22px;
+        padding: 12px 18px;
+    }
+
+    /* العناوين تكون أصغر على الهواتف */
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    /* تعديل تنسيق شريط الأسعار */
+    .ticker-container {
+        font-size: 14px;
+    }
+
+    /* تصغير حجم الأيقونات */
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* تحسين تخطيط الفوتر */
+    .social-footer {
+        padding: 15px;
+    }
+
+    /* تعديل الصورة لتكون أصغر على الهواتف */
+    .crypto-image {
+        width: 80%;
+        max-width: 300px;
+        margin: 10px auto;
+        display: block;
+    }
+
+    /* تقليل المسافات داخل الأقسام */
+    section {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    /* تحسين النصوص ليتم عرضها بشكل مناسب */
+    p {
+        font-size: 16px;
+    }
+
+    /* شريط العملات يتحرك بشكل أبطأ قليلاً ليكون أكثر سلاسة */
+    @keyframes scrollTicker {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+}
