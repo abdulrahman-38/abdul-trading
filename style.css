@@ -148,7 +148,7 @@ h1, h2 {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #f8f8f8;
+    background-color: transparet;
     padding: 15px 0;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
