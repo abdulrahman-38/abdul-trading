@@ -19,6 +19,42 @@
         </ul>
     </div>
 
+        /* تنسيق الشريط المتحرك */
+        .ticker-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: #222;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: scrollTicker 15s linear infinite;
+        }
+
+        .ticker-item {
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        /* الحركة المستمرة */
+        @keyframes scrollTicker {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    
     <!-- محتوى الصفحة الرئيسي -->
     <div class="main-content">
         <h1>متابعة أسعار العملات الرقمية</h1>
