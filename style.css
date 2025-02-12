@@ -145,13 +145,13 @@ h1, h2 {
     text-align: center;
     padding: 10px;
     width: 100%;
-    background-color: #f8f8f8;
+    background-color: transparent;
     position: absolute;
     bottom: 0;
 }
 
 .social-footer hr {
-    width: 80%;
+    width: 50%;
     border: 1px solid #ccc;
     margin: 5px auto;
 }
@@ -159,7 +159,7 @@ h1, h2 {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .social-icon {
@@ -190,8 +190,8 @@ h1, h2 {
     }
 
     .menu-toggle {
-        font-size: 22px;
-        padding: 12px 18px;
+        font-size: 7px;
+        padding: 8px 12px;
     }
 
     .ticker-container {
