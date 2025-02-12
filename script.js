@@ -1,8 +1,3 @@
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('active');
-}
-
 async function fetchCryptoPrices() {
     try {
         // جلب البيانات من CoinGecko API
@@ -40,4 +35,9 @@ fetchCryptoPrices();
 
 // تحديث الأسعار كل 60 ثانية
 setInterval(fetchCryptoPrices, 60000);
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}
 
