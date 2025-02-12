@@ -3,6 +3,7 @@ body {
     background-color: #12CAD6;
     text-align: center;
     font-family: "Dubai", Helvetica, sans-serif;
+    display: flex;
 
     /* تنسيق زر القائمة */
 .menu-toggle {
@@ -16,6 +17,7 @@ body {
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
+     z-index: 1000;
 }
 
 .menu-toggle:hover {
@@ -30,8 +32,10 @@ body {
     padding: 20px;
     height: 100vh;
     position: fixed;
-    right: 0;
+    right: -250px;
     top: 0;
+     transition: right 0.3s ease-in-out;
+    z-index: 999;
 }
 
 .sidebar ul {
