@@ -95,11 +95,4 @@ h1, h2 {
     </style>
 </head>
 <body>
-<h1>متابعة أسعار العملات الرقمية</h1>
 
-    <!-- شريط الأسعار -->
-    <div class="ticker-container">
-        <div class="ticker" id="crypto-ticker">
-            <!-- سيتم ملء الأسعار هنا تلقائيًا -->
-        </div>
-    </div>
