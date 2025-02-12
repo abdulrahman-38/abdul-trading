@@ -1,3 +1,8 @@
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}
+
 async function fetchCryptoPrices() {
     try {
         // جلب البيانات من CoinGecko API
