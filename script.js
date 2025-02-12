@@ -37,7 +37,6 @@ fetchCryptoPrices();
 setInterval(fetchCryptoPrices, 60000);
 
 
-
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('active');
