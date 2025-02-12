@@ -149,7 +149,7 @@ h1, h2 {
     left: 0;
     width: 100%;
     background-color: transparent;
-    padding: 7px 0;
+    padding: 15px 0;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
 }
@@ -160,9 +160,9 @@ h1, h2 {
 }
 
 .social-footer hr {
-    width: 50%;
+    width: 80%;
     border: 1px solid #ccc;
-    margin: 50px auto;
+    margin: 10px auto;
 }
 
 .social-icons {
