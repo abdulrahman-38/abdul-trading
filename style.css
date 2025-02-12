@@ -124,14 +124,20 @@ h1, h2 {
 .social-footer {
     text-align: center;
     padding: 20px;
-    background-color: #222;
-    color: white;
+    background-color: #f8f8f8;
+    color: #333;
     margin-top: 30px;
+}
+    .social-footer hr {
+    width: 80%;
+    border: 1px solid #ccc; /* لون الخط الفاصل */
+    margin: 10px auto;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     margin-top: 10px;
 }
