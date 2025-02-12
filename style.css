@@ -1,11 +1,20 @@
-/* تنسيق الصفحة */
+/* تنسيق الصفحة بالكامل */
 body {
     background-color: #12CAD6;
     text-align: center;
     font-family: "Dubai", Helvetica, sans-serif;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
-    /* تنسيق زر القائمة */
+/* زر القائمة */
 .menu-toggle {
     position: fixed;
     top: 20px;
@@ -17,7 +26,7 @@ body {
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
-     z-index: 1000;
+    z-index: 1000;
 }
 
 .menu-toggle:hover {
@@ -63,163 +72,129 @@ body {
     background-color: #555;
 }
 
-    /* عندما تكون القائمة مفتوحة */
+/* عندما تكون القائمة مفتوحة */
 .sidebar.active {
     right: 0;
 }
 
 /* تنسيق المحتوى الرئيسي */
 .main-content {
-    margin-right: 270px; /* لجعل المحتوى بعيدًا عن القائمة */
-    padding: 20px;
-    flex-grow: 1;
-}
-
-/* تنسيق الأقسام */
-section {
+    width: 90vw;
+    height: 160vw; /* للحفاظ على نسبة 9:16 */
+    max-width: 540px;
+    max-height: 960px;
     background: white;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
 }
 
 /* تنسيق العناوين */
 h1, h2 {
     color: #333;
 }
- /* تنسيق الشريط المتحرك */
-        .ticker-container {
-            width: 100%;
-            overflow: hidden;
-            background-color: #222;
-            color: white;
-            padding: 5px 0;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-        }  
- .ticker {
-            display: flex;
-            white-space: nowrap;
-            animation: scrollTicker 15s linear infinite;
-        }
 
-        .ticker-item {
-            margin: 0 20px;
-            font-size: 18px;
-        }
+/* تنسيق شريط الأسعار */
+.ticker-container {
+    width: 90%;
+    height: 40px;
+    overflow: hidden;
+    background-color: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
 
-        /* الحركة المستمرة */
-       @keyframes scrollTicker {
-    {
+.ticker {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollTicker 15s linear infinite;
+}
+
+@keyframes scrollTicker {
+    from {
         transform: translateX(100%);
     }
     to {
         transform: translateX(-100%);
     }
 }
-/* تنسيق قسم وسائل التواصل الاجتماعي */
+
+/* ضبط صورة البيتكوين */
+.crypto-image {
+    width: 60%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* تنسيق العبارة تحت الصورة */
+.crypto-text {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* تحسين الفوتر */
 .social-footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+    width: 100%;
     background-color: #f8f8f8;
-    color: #333;
-    margin-top: 30px;
+    position: absolute;
+    bottom: 0;
 }
-    .social-footer hr {
+
+.social-footer hr {
     width: 80%;
-    border: 1px solid #ccc; /* لون الخط الفاصل */
-    margin: 10px auto;
+    border: 1px solid #ccc;
+    margin: 5px auto;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 10px;
 }
 
 .social-icon {
-    width: 40px;
-    height:40px;
+    width: 24px;
+    height: 24px;
     transition: transform 0.2s ease-in-out;
 }
 
 .social-icon:hover {
     transform: scale(1.1);
 }
-/* تحسين عرض الصفحة على الهواتف */
+
+/* تحسين توافق الهواتف */
 @media screen and (max-width: 768px) {
-    /* القائمة الجانبية تتوسع لتملأ الشاشة عند فتحها */
-    .sidebar {
-        width: 100%;
-        right: -100%;
+    .main-content {
+        width: 95vw;
+        height: 170vw; /* للحفاظ على نسبة 9:16 */
+        max-width: 450px;
+        max-height: 800px;
     }
 
-    .sidebar.active {
-        right: 0;
+    .crypto-image {
+        width: 70%;
     }
 
-    /* زر القائمة يكون أكبر قليلاً لتسهيل الضغط عليه */
+    .crypto-text {
+        font-size: 16px;
+    }
+
     .menu-toggle {
         font-size: 22px;
         padding: 12px 18px;
     }
 
-    /* العناوين تكون أصغر على الهواتف */
-    h1 {
-        font-size: 22px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    /* تعديل تنسيق شريط الأسعار */
     .ticker-container {
         font-size: 14px;
-    }
-
-    /* تصغير حجم الأيقونات */
-    .social-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    /* تحسين تخطيط الفوتر */
-    .social-footer {
-        padding: 15px;
-    }
-
-    /* تعديل الصورة لتكون أصغر على الهواتف */
-    .crypto-image {
-        width: 80%;
-        max-width: 300px;
-        margin: 10px auto;
-        display: block;
-    }
-
-    /* تقليل المسافات داخل الأقسام */
-    section {
-        padding: 15px;
-        margin: 10px;
-    }
-
-    /* تحسين النصوص ليتم عرضها بشكل مناسب */
-    p {
-        font-size: 16px;
-    }
-
-    /* شريط العملات يتحرك بشكل أبطأ قليلاً ليكون أكثر سلاسة */
-    @keyframes scrollTicker {
-        from {
-            transform: translateX(100%);
-        }
-        to {
-            transform: translateX(-100%);
-        }
     }
 }
