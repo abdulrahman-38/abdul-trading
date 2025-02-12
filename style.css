@@ -147,8 +147,8 @@ h1, h2 {
     position: fixed;  /* الفوتر يبقى ثابتًا في أسفل الصفحة */
     bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: transparet;
+    width: 50%;
+    background-color: transparent;
     padding: 15px 0;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
