@@ -71,7 +71,8 @@ h1, h2 {
             position: relative;
             display: flex;
             justify-content: center;
-        }
+            margin-bottom: 20px;
+        }  
  .ticker {
             display: flex;
             white-space: nowrap;
@@ -92,7 +93,3 @@ h1, h2 {
         transform: translateX(-100%);
     }
 }
-</>
-</head>
-<body>
-
