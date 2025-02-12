@@ -140,14 +140,21 @@ h1, h2 {
     text-align: center;
 }
 
-/* تحسين الفوتر */
+/* تنسيق الفوتر */
 .social-footer {
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    background-color: transparent;
-    position: absolute;
+    position: fixed;  /* الفوتر يبقى ثابتًا في أسفل الصفحة */
     bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+/* جعل الفوتر لا يلتصق بالمحتوى */
+.main-content {
+    padding-bottom: 60px; /* ضمان وجود مسافة بين المحتوى والفوتر */
 }
 
 .social-footer hr {
