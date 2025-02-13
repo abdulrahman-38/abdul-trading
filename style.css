@@ -14,6 +14,17 @@ body {
     overflow-x: hidden;
 }
 
+
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+
 /* زر القائمة */
 .menu-toggle {
     position: fixed;
