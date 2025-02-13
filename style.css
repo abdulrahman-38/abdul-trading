@@ -33,6 +33,15 @@ body {
     background-color: #555;
 }
 
+/* Header/Logo Title */
+.header {
+  padding: 1px;
+  text-align: center;
+  background: #f7f7f7;
+  color: white;
+  font-size: 10px;
+}
+
 /* تنسيق القائمة الجانبية */
 .sidebar {
     width: 250px;
