@@ -163,12 +163,6 @@ h1, h2 {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
 }
 
-/* جعل الفوتر لا يلتصق بالمحتوى */
-.main-content {
-    padding-bottom: 80px; /* ضمان وجود مسافة بين المحتوى والفوتر */
-}
-
-
 
 .social-icons {
     display: flex;
