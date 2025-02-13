@@ -1,9 +1,9 @@
 /* تنسيق الصفحة بالكامل */
 body {
-    background-color: #12CAD6;
+    background-color: #f7f7f7;
     text-align: center;
-    font-family: "Dubai", Helvetica, sans-serif;
-    display: flex;
+    font-family: Dubai, Helvetica, sans-serif;
+    display: run-in;
     flex-direction: column;
     align-items: center;
     justify-content: center;
