@@ -16,10 +16,6 @@ body {
 
 
 
-.active {
-  background-color: #04AA6D;
-  color: white;
-}
 
 /* زر القائمة */
 .menu-toggle {
@@ -49,7 +45,7 @@ body {
     padding: 15px 0;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
-    z-index: 1000;
+    z-index: 999;
 }
 
 
