@@ -61,11 +61,12 @@ body {
     background-color: #222;
     color: white;
     padding: 20px;
-    height: 70vh;
+    height: calc(100vh - 120px);
     position: fixed;
     right: -290px;
-    top: 0;
+    top: 60px;
     transition: right 0.3s ease-in-out;
+    overflow-y: auto;
     z-index: 999;
 }
 
