@@ -10,9 +10,19 @@
 </head>
 <body>
 
+ <!-- الهيدر الثابت -->
+    <header class="header">
+        <button class="menu-toggle">☰ </button>
+        <h1>قروب المطانيخ</h1>
 
-    <!-- زر إظهار وإخفاء القائمة -->
-    <button class="menu-toggle">☰ </button>   
+       <!-- شريط العملات داخل الهيدر -->
+        <div class="ticker-container">
+            <div class="ticker" id="crypto-ticker">
+                <!-- سيتم تحديث الأسعار تلقائيًا -->
+                <span>BTC: $45,000 | ETH: $3,200 | XRP: $1.20 | BNB: $400</span>
+            </div>
+        </div>
+    </header> 
     
     <!-- القائمة الجانبية -->
     <div class="sidebar" id="sidebar">
