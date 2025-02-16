@@ -40,6 +40,33 @@ body {
     background-color: #555;
 }
 
+.social-footer {
+    position: fixed;  /* الفوتر يبقى ثابتًا في أسفل الصفحة */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
 
 /* تنسيق القائمة الجانبية */
 .sidebar {
@@ -172,33 +199,6 @@ h1, h2 {
 }
 
 /* تنسيق الفوتر */
-.social-footer {
-    position: fixed;  /* الفوتر يبقى ثابتًا في أسفل الصفحة */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f7f7f7;
-    padding: 15px 0;
-    text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
-}
-
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.social-icon:hover {
-    transform: scale(1.1);
-}
 
 /* تحسين توافق الهواتف */
 @media screen and (max-width: 768px) {
