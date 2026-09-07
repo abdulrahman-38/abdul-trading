@@ -198,6 +198,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             candleSeries.setData(candles);
 
+            const lastCandle = candles[candles.length - 1];
+
+const mainPrice = document.getElementById("btc-main-price");
+
+if (mainPrice && lastCandle) {
+    mainPrice.textContent =
+        "$" + lastCandle.close.toLocaleString(undefined, {
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1
+        });
+}
             chart.timeScale().fitContent();
 
         } catch (error) {
