@@ -99,37 +99,57 @@ document.addEventListener("DOMContentLoaded", () => {
         wickDownColor: "#ff5364"
     });
 
-    async function loadBTCChart() {
-        try {
-            const response = await fetch(
-                "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1h&limit=120"
-            );
+    async function loadBTCChart(interval = "1h") {
+    try {
+        const response = await fetch(
+            `https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=${interval}&limit=120`
+        );
 
-            if (!response.ok) {
-                throw new Error("Failed to load chart");
-            }
-
-            const data = await response.json();
-
-            const candles = data.map(candle => ({
-                time: candle[0] / 1000,
-                open: parseFloat(candle[1]),
-                high: parseFloat(candle[2]),
-                low: parseFloat(candle[3]),
-                close: parseFloat(candle[4])
-            }));
-
-            candleSeries.setData(candles);
-            chart.timeScale().fitContent();
-
-        } catch (error) {
-            console.error("Chart error:", error);
+        if (!response.ok) {
+            throw new Error("Failed to load chart");
         }
+
+        const data = await response.json();
+
+        const candles = data.map(candle => ({
+            time: candle[0] / 1000,
+            open: parseFloat(candle[1]),
+            high: parseFloat(candle[2]),
+            low: parseFloat(candle[3]),
+            close: parseFloat(candle[4])
+        }));
+
+        candleSeries.setData(candles);
+        chart.timeScale().fitContent();
+
+    } catch (error) {
+        console.error("Chart error:", error);
     }
-
+}
     loadBTCChart();
+const timeframeMap = {
+    "1m": "1m",
+    "5m": "5m",
+    "15m": "15m",
+    "1H": "1h",
+    "1D": "1d"
+};
 
+document.querySelectorAll(".timeframes button").forEach(button => {
+    button.addEventListener("click", () => {
 
+        document.querySelectorAll(".timeframes button")
+            .forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        const interval = timeframeMap[button.textContent.trim()];
+
+        if (interval) {
+            loadBTCChart(interval);
+        }
+    });
+});
     // Responsive chart
     window.addEventListener("resize", () => {
         chart.applyOptions({
