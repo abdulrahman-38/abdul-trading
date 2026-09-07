@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>قروب المطانيخ</title>
+
+  <title>ALMULLA TRADING</title>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+  <!-- =========================
+       TOP HEADER
+  ========================== -->
+
   <header class="topbar">
-    <div class="brand">
-      <div class="brand-icon">🐪</div>
-      <div>
-        <h1>قروب المطانيخ</h1>
-        <span>CRYPTO TRADING</span>
+
+    <div class="header-main">
+
+      <div class="brand">
+
+        <div class="brand-mark">
+          A
+        </div>
+
+        <div class="brand-text">
+          <h1>ALMULLA TRADING</h1>
+          <span>CRYPTO MARKET INTELLIGENCE</span>
+        </div>
+
       </div>
+
+      <button class="menu-button" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
 
-    <button class="menu-button">☰</button>
+    <div class="market-status">
+
+      <div class="market-live">
+        <span class="live-dot"></span>
+        <span>MARKET LIVE</span>
+      </div>
+
+      <span class="status-line"></span>
+
+      <span class="market-pair">
+        BTC / USDT
+      </span>
+
+    </div>
+
   </header>
 
 
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
   <main class="container">
+
+
+    <!-- MARKET TICKER -->
 
     <section class="ticker-row">
 
@@ -32,162 +74,390 @@
           <strong>BTC</strong>
           <span>$62,315</span>
         </div>
-        <small class="up">+1.42%</small>
+
+        <small class="up">
+          +1.42%
+        </small>
       </div>
+
 
       <div class="coin-card">
         <div>
           <strong>ETH</strong>
           <span>$3,401</span>
         </div>
-        <small class="up">+0.85%</small>
+
+        <small class="up">
+          +0.85%
+        </small>
       </div>
+
 
       <div class="coin-card">
         <div>
           <strong>SOL</strong>
           <span>$142.6</span>
         </div>
-        <small class="up">+3.25%</small>
+
+        <small class="up">
+          +3.25%
+        </small>
       </div>
+
 
       <div class="coin-card">
         <div>
           <strong>BNB</strong>
           <span>$577</span>
         </div>
-        <small class="up">+2.11%</small>
+
+        <small class="up">
+          +2.11%
+        </small>
       </div>
 
     </section>
 
+
+    <!-- =========================
+         BTC CHART
+    ========================== -->
 
     <section class="panel chart-panel">
 
       <div class="panel-head">
-        <div>
-          <span>BTCUSDT</span>
-          <h2 id="btc-main-price">Loading...</h2>
-<p id="btc-main-change" class="up">Loading...</p>
+
+        <div class="btc-summary">
+
+          <span class="pair-name">
+            BTCUSDT
+          </span>
+
+          <h2 id="btc-main-price">
+            Loading...
+          </h2>
+
+          <p
+            id="btc-main-change"
+            class="up"
+          >
+            Loading...
+          </p>
+
         </div>
+
 
         <div class="timeframes">
-          <button>1m</button>
-          <button>5m</button>
-          <button>15m</button>
-          <button>1H</button>
-          <button class="active">1D</button>
+
+          <button>
+            1m
+          </button>
+
+          <button>
+            5m
+          </button>
+
+          <button>
+            15m
+          </button>
+
+          <button class="active">
+            1H
+          </button>
+
+          <button>
+            1D
+          </button>
+
         </div>
+
       </div>
 
-     <div class="chart-placeholder" id="btc-chart"></div>
+
+      <div
+        class="chart-placeholder"
+        id="btc-chart"
+      ></div>
+
 
       <div class="indicator-tabs">
-        <button class="active">MA</button>
-        <button>EMA</button>
-        <button>BOLL</button>
-        <button>RSI</button>
-        <button>MACD</button>
+
+        <button class="active">
+          MA
+        </button>
+
+        <button>
+          EMA
+        </button>
+
+        <button>
+          BOLL
+        </button>
+
+        <button>
+          RSI
+        </button>
+
+        <button>
+          MACD
+        </button>
+
       </div>
 
     </section>
 
+
+    <!-- =========================
+         DASHBOARD PANELS
+    ========================== -->
 
     <section class="dashboard-grid">
 
+
+      <!-- FEAR & GREED -->
+
       <div class="panel">
-        <h3>مؤشر الخوف والطمع</h3>
+
+        <h3>
+          مؤشر الخوف والطمع
+        </h3>
 
         <div class="fear-score">
-          <strong>72</strong>
-          <span>Greed</span>
+
+          <strong>
+            72
+          </strong>
+
+          <span>
+            Greed
+          </span>
+
         </div>
+
       </div>
 
 
+      <!-- INDICATORS -->
+
       <div class="panel">
-        <h3>أهم المؤشرات</h3>
+
+        <h3>
+          أهم المؤشرات
+        </h3>
 
         <ul class="stats-list">
-          <li><span>RSI (14)</span><strong>58.4</strong></li>
-          <li><span>MACD</span><strong class="up">256.3</strong></li>
-          <li><span>Signal</span><strong class="down">-142.6</strong></li>
-          <li><span>EMA (50)</span><strong>60,210</strong></li>
+
+          <li>
+            <span>RSI (14)</span>
+            <strong>58.4</strong>
+          </li>
+
+          <li>
+            <span>MACD</span>
+            <strong class="up">
+              256.3
+            </strong>
+          </li>
+
+          <li>
+            <span>Signal</span>
+            <strong class="down">
+              -142.6
+            </strong>
+          </li>
+
+          <li>
+            <span>EMA (50)</span>
+            <strong>
+              60,210
+            </strong>
+          </li>
+
         </ul>
+
       </div>
 
 
+      <!-- TRADING SIGNALS -->
+
       <div class="panel">
-        <h3>إشارات التداول</h3>
+
+        <h3>
+          إشارات التداول
+        </h3>
 
         <ul class="signals">
-          <li><span>BTC</span><b class="buy">BUY</b></li>
-          <li><span>ETH</span><b class="buy">BUY</b></li>
-          <li><span>SOL</span><b class="hold">HOLD</b></li>
-          <li><span>XRP</span><b class="sell">SELL</b></li>
+
+          <li>
+            <span>BTC</span>
+            <b class="buy">
+              BUY
+            </b>
+          </li>
+
+          <li>
+            <span>ETH</span>
+            <b class="buy">
+              BUY
+            </b>
+          </li>
+
+          <li>
+            <span>SOL</span>
+            <b class="hold">
+              HOLD
+            </b>
+          </li>
+
+          <li>
+            <span>XRP</span>
+            <b class="sell">
+              SELL
+            </b>
+          </li>
+
         </ul>
+
       </div>
 
     </section>
 
+
+    <!-- =========================
+         WATCHLIST
+    ========================== -->
 
     <section class="panel watchlist">
 
       <div class="section-title">
-        <h3>عملات تحت المتابعة</h3>
-        <span>View All</span>
+
+        <h3>
+          عملات تحت المتابعة
+        </h3>
+
+        <span>
+          View All
+        </span>
+
       </div>
 
-      <div class="watch-row">
-        <strong>BTC</strong>
-        <span>$62,315</span>
-        <span class="up">+1.42%</span>
-      </div>
 
       <div class="watch-row">
-        <strong>ETH</strong>
-        <span>$3,401</span>
-        <span class="up">+0.85%</span>
+
+        <strong>
+          BTC
+        </strong>
+
+        <span>
+          $62,315
+        </span>
+
+        <span class="up">
+          +1.42%
+        </span>
+
       </div>
 
-      <div class="watch-row">
-        <strong>BNB</strong>
-        <span>$577</span>
-        <span class="up">+2.11%</span>
-      </div>
 
       <div class="watch-row">
-        <strong>XRP</strong>
-        <span>$0.632</span>
-        <span class="down">-0.38%</span>
+
+        <strong>
+          ETH
+        </strong>
+
+        <span>
+          $3,401
+        </span>
+
+        <span class="up">
+          +0.85%
+        </span>
+
+      </div>
+
+
+      <div class="watch-row">
+
+        <strong>
+          BNB
+        </strong>
+
+        <span>
+          $577
+        </span>
+
+        <span class="up">
+          +2.11%
+        </span>
+
+      </div>
+
+
+      <div class="watch-row">
+
+        <strong>
+          XRP
+        </strong>
+
+        <span>
+          $0.632
+        </span>
+
+        <span class="down">
+          -0.38%
+        </span>
+
       </div>
 
     </section>
 
+
+    <!-- =========================
+         NEWS
+    ========================== -->
 
     <section class="panel news">
 
       <div class="section-title">
-        <h3>أحدث الأخبار</h3>
-        <span>View All</span>
+
+        <h3>
+          أحدث الأخبار
+        </h3>
+
+        <span>
+          View All
+        </span>
+
       </div>
 
+
       <div class="news-item">
+
         <div class="news-image"></div>
 
         <div>
+
           <strong>
             Bitcoin approaches $63K as institutional demand grows
           </strong>
 
-          <p>Cointelegraph • 1 hour ago</p>
+          <p>
+            Cointelegraph • 1 hour ago
+          </p>
+
         </div>
+
       </div>
 
     </section>
 
+
   </main>
 
+
+  <!-- =========================
+       BOTTOM NAVIGATION
+  ========================== -->
 
   <nav class="bottom-nav">
 
@@ -217,8 +487,17 @@
 
   </nav>
 
-<script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
-<script src="script.js?v=12"></script>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script
+    src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js">
+  </script>
+
+  <script src="script.js?v=12"></script>
 
 </body>
+
 </html>
