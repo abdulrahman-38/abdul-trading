@@ -1,89 +1,226 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قروب المطانيخ</title>
-    
-    <!-- ربط ملف CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قروب المطانيخ</title>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
- <!-- القائمة الجانبية -->
-    <div class="sidebar" id="sidebar">
-        <ul>
-            <li><a href="#watchlist">📌 عملات تحت المتابعة</a></li>
-            <li><a href="#fear-greed">📊 مؤشر الخوف والطمع</a></li>
-            <li><a href="#charts">📈 تشارت العملات</a></li>
-        </ul>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">🐪</div>
+      <div>
+        <h1>قروب المطانيخ</h1>
+        <span>CRYPTO TRADING</span>
+      </div>
     </div>
-    
- <!-- الهيدر الثابت -->
-    <header class="header">
-        <button class="menu-toggle">☰ </button>
-        
 
-       <!-- شريط العملات داخل الهيدر -->
-        <div class="ticker-container">
-            <div class="ticker" id="crypto-ticker">
-                <!-- سيتم تحديث الأسعار تلقائيًا -->
-                <span>BTC: $45,000 | ETH: $3,200 | XRP: $1.20 | BNB: $400</span>
-            </div>
+    <button class="menu-button">☰</button>
+  </header>
+
+
+  <main class="container">
+
+    <section class="ticker-row">
+
+      <div class="coin-card">
+        <div>
+          <strong>BTC</strong>
+          <span>$62,315</span>
         </div>
-    </header> 
-    
-   
+        <small class="up">+1.42%</small>
+      </div>
 
-    <!-- محتوى الصفحة الرئيسي -->
-    <div class="main-content">
-        <h1></h1>
+      <div class="coin-card">
+        <div>
+          <strong>ETH</strong>
+          <span>$3,401</span>
+        </div>
+        <small class="up">+0.85%</small>
+      </div>
 
-     
-        <!-- صورة تحت الشريط -->
-        <img src="bitcoin.png" alt="Bitcoin Image" class="crypto-image">
+      <div class="coin-card">
+        <div>
+          <strong>SOL</strong>
+          <span>$142.6</span>
+        </div>
+        <small class="up">+3.25%</small>
+      </div>
 
-        <!-- العبارة تحت الصورة -->
-        <p class="crypto-text">Bitcoin will rule the world</p>
+      <div class="coin-card">
+        <div>
+          <strong>BNB</strong>
+          <span>$577</span>
+        </div>
+        <small class="up">+2.11%</small>
+      </div>
 
-        <!-- قسم عملات تحت المتابعة -->
-        <section id="watchlist">
-            <h2>📌 عملات تحت المتابعة</h2>
-            <p>يمكنك إضافة العملات التي تريد متابعتها هنا.</p>
-        </section>
+    </section>
 
-        <!-- قسم مؤشر الخوف والطمع -->
-        <section id="fear-greed">
-            <h2>📊 مؤشر الخوف والطمع</h2>
-            <p>يعكس مؤشر الخوف والطمع الحالة النفسية لسوق العملات الرقمية.</p>
-        </section>
 
-        <!-- قسم تشارت العملات -->
-        <section id="charts">
-            <h2>📈 تشارت العملات</h2>
-            <p>رسم بياني لحركة العملات الرقمية.</p>
-        </section>
-    </div>
+    <section class="panel chart-panel">
 
-    <!-- ربط ملف JavaScript -->
-    <script src="script.js"></script>
+      <div class="panel-head">
+        <div>
+          <span>BTCUSDT</span>
+          <h2>$62,315.0</h2>
+          <p class="up">+883.0 (+1.44%)</p>
+        </div>
 
-<!-- قسم وسائل التواصل الاجتماعي (فقط أيقونات) -->
-<footer class="social-footer">
-    <div class="social-icons">
-        <!-- أيقونة إنستقرام -->
-        <a href="https://www.instagram.com/abdulrahman38" target="_blank">
-            <img src="instagram.png" alt="Instagram" class="social-icon">
-        </a>
+        <div class="timeframes">
+          <button>1m</button>
+          <button>5m</button>
+          <button>15m</button>
+          <button>1H</button>
+          <button class="active">1D</button>
+        </div>
+      </div>
 
-        <!-- أيقونة X (تويتر سابقًا) -->
-        <a href="https://twitter.com/bokhaled899" target="_blank">
-            <img src="x.png" alt="X (Twitter)" class="social-icon">
-        </a>
-    </div>
-</footer>
+      <div class="chart-placeholder">
+        <span>Bitcoin Chart</span>
+      </div>
 
-  
+      <div class="indicator-tabs">
+        <button class="active">MA</button>
+        <button>EMA</button>
+        <button>BOLL</button>
+        <button>RSI</button>
+        <button>MACD</button>
+      </div>
+
+    </section>
+
+
+    <section class="dashboard-grid">
+
+      <div class="panel">
+        <h3>مؤشر الخوف والطمع</h3>
+
+        <div class="fear-score">
+          <strong>72</strong>
+          <span>Greed</span>
+        </div>
+      </div>
+
+
+      <div class="panel">
+        <h3>أهم المؤشرات</h3>
+
+        <ul class="stats-list">
+          <li><span>RSI (14)</span><strong>58.4</strong></li>
+          <li><span>MACD</span><strong class="up">256.3</strong></li>
+          <li><span>Signal</span><strong class="down">-142.6</strong></li>
+          <li><span>EMA (50)</span><strong>60,210</strong></li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h3>إشارات التداول</h3>
+
+        <ul class="signals">
+          <li><span>BTC</span><b class="buy">BUY</b></li>
+          <li><span>ETH</span><b class="buy">BUY</b></li>
+          <li><span>SOL</span><b class="hold">HOLD</b></li>
+          <li><span>XRP</span><b class="sell">SELL</b></li>
+        </ul>
+      </div>
+
+    </section>
+
+
+    <section class="panel watchlist">
+
+      <div class="section-title">
+        <h3>عملات تحت المتابعة</h3>
+        <span>View All</span>
+      </div>
+
+      <div class="watch-row">
+        <strong>BTC</strong>
+        <span>$62,315</span>
+        <span class="up">+1.42%</span>
+      </div>
+
+      <div class="watch-row">
+        <strong>ETH</strong>
+        <span>$3,401</span>
+        <span class="up">+0.85%</span>
+      </div>
+
+      <div class="watch-row">
+        <strong>BNB</strong>
+        <span>$577</span>
+        <span class="up">+2.11%</span>
+      </div>
+
+      <div class="watch-row">
+        <strong>XRP</strong>
+        <span>$0.632</span>
+        <span class="down">-0.38%</span>
+      </div>
+
+    </section>
+
+
+    <section class="panel news">
+
+      <div class="section-title">
+        <h3>أحدث الأخبار</h3>
+        <span>View All</span>
+      </div>
+
+      <div class="news-item">
+        <div class="news-image"></div>
+
+        <div>
+          <strong>
+            Bitcoin approaches $63K as institutional demand grows
+          </strong>
+
+          <p>Cointelegraph • 1 hour ago</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <nav class="bottom-nav">
+
+    <button class="active">
+      <span>⌂</span>
+      الرئيسية
+    </button>
+
+    <button>
+      <span>▥</span>
+      الأسواق
+    </button>
+
+    <button class="trade">
+      <span>↗</span>
+    </button>
+
+    <button>
+      <span>▤</span>
+      الأخبار
+    </button>
+
+    <button>
+      <span>•••</span>
+      المزيد
+    </button>
+
+  </nav>
+
+
+  <script src="script.js"></script>
+
 </body>
 </html>
-
