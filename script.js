@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const data = await response.json();
             const cards = document.querySelectorAll(".coin-card");
-
+            const btcMainPrice = document.getElementById("btc-main-price");
+            const btcMainChange = document.getElementById("btc-main-change");
+            
             coins.forEach((coin, index) => {
                 const card = cards[index];
 
@@ -45,7 +47,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 changeElement.classList.remove("up", "down");
                 changeElement.classList.add(change >= 0 ? "up" : "down");
             });
+            const btc = data["bitcoin"];
 
+if (btcMainPrice && btcMainChange && btc) {
+    const btcPrice = btc.usd;
+    const btcChange = btc.usd_24h_change;
+
+    btcMainPrice.textContent =
+        "$" + Number(btcPrice).toLocaleString(undefined, {
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1
+        });
+
+    btcMainChange.textContent =
+        `${btcChange >= 0 ? "+" : ""}${btcChange.toFixed(2)}%`;
+
+    btcMainChange.classList.remove("up", "down");
+    btcMainChange.classList.add(btcChange >= 0 ? "up" : "down");
+}
         } catch (error) {
             console.error("Price update failed:", error);
         }
