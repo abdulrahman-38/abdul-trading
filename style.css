@@ -731,3 +731,322 @@ body {
         border-radius: 20px 20px 0 0;
     }
 }
+/* =========================================
+   ALMULLA TRADING — HEADER
+========================================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    padding:
+        env(safe-area-inset-top)
+        16px
+        12px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 9, 11, 0.98) 0%,
+            rgba(8, 9, 11, 0.94) 70%,
+            rgba(8, 9, 11, 0.88) 100%
+        );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* TOP ROW */
+
+.header-main {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    direction: ltr;
+}
+
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    direction: ltr;
+}
+
+
+.brand-mark {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    color: #f1f1f1;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.30);
+}
+
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    line-height: 1;
+}
+
+
+.brand-text h1 {
+    margin: 0;
+
+    color: #f4f4f4;
+
+    font-size: 16px;
+    font-weight: 750;
+
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+}
+
+
+.brand-text span {
+    margin-top: 6px;
+
+    color: #666c75;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+
+    white-space: nowrap;
+}
+
+
+/* MENU BUTTON */
+
+.menu-button {
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border-radius: 11px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    cursor: pointer;
+}
+
+
+.menu-button span {
+    display: block;
+
+    width: 15px;
+    height: 1.5px;
+
+    border-radius: 5px;
+
+    background: #d9d9d9;
+}
+
+
+/* make second line shorter */
+
+.menu-button span:last-child {
+    width: 10px;
+    margin-left: 5px;
+}
+
+
+/* MARKET STATUS */
+
+.market-status {
+    width: 100%;
+    max-width: 1200px;
+
+    margin:
+        11px auto
+        0;
+
+    padding-top: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    direction: ltr;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.045);
+
+    color: #6f757d;
+
+    font-size: 9px;
+    font-weight: 650;
+
+    letter-spacing: 1px;
+}
+
+
+.market-live {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #8d939b;
+}
+
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #00d68f;
+
+    box-shadow:
+        0 0 8px rgba(0, 214, 143, 0.55);
+}
+
+
+.status-line {
+    width: 20px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.10);
+}
+
+
+.market-pair {
+    color: #686e76;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .topbar {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .brand-mark {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 10px;
+
+        font-size: 17px;
+    }
+
+    .brand-text h1 {
+        font-size: 14px;
+        letter-spacing: 0.55px;
+    }
+
+    .brand-text span {
+        font-size: 7px;
+        letter-spacing: 1.45px;
+    }
+
+    .menu-button {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 10px;
+    }
+
+    .market-status {
+        margin-top: 9px;
+        padding-top: 9px;
+
+        font-size: 8px;
+    }
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+
+    .topbar {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .brand-mark {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-text h1 {
+        font-size: 17px;
+    }
+
+    .brand-text span {
+        font-size: 8px;
+    }
+
+    .menu-button {
+        width: 42px;
+        height: 42px;
+    }
+}
