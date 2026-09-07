@@ -294,57 +294,6 @@ body {
    CHART VISUAL
 ================================ */
 
-.chart-placeholder {
-    height: 245px;
-    margin: 20px -18px 8px;
-
-    position: relative;
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #454a50;
-    font-size: 11px;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        );
-
-    background-size: 42px 42px;
-}
-
-.chart-placeholder::after {
-    content: "";
-
-    position: absolute;
-
-    width: 110%;
-    height: 85px;
-
-    left: -5%;
-    bottom: 50px;
-
-    border-top: 2px solid rgba(255,255,255,.6);
-
-    transform:
-        rotate(-4deg)
-        skewX(-18deg);
-
-    filter: drop-shadow(
-        0 0 8px rgba(255,255,255,.2)
-    );
-}
-
-
 /* ================================
    INDICATORS
 ================================ */
