@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const data = await response.json();
-
             const cards = document.querySelectorAll(".coin-card");
 
             coins.forEach((coin, index) => {
@@ -53,7 +52,89 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     fetchPrices();
-
     setInterval(fetchPrices, 60000);
+
+
+    // =============================
+    // BTC CANDLESTICK CHART
+    // =============================
+
+    const chartContainer = document.getElementById("btc-chart");
+
+    const chart = LightweightCharts.createChart(chartContainer, {
+        width: chartContainer.clientWidth,
+        height: 245,
+        layout: {
+            background: {
+                type: "solid",
+                color: "transparent"
+            },
+            textColor: "#70757c"
+        },
+        grid: {
+            vertLines: {
+                color: "rgba(255,255,255,0.035)"
+            },
+            horzLines: {
+                color: "rgba(255,255,255,0.035)"
+            }
+        },
+        rightPriceScale: {
+            borderColor: "rgba(255,255,255,0.08)"
+        },
+        timeScale: {
+            borderColor: "rgba(255,255,255,0.08)",
+            timeVisible: true
+        },
+        crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal
+        }
+    });
+
+    const candleSeries = chart.addCandlestickSeries({
+        upColor: "#00d68f",
+        downColor: "#ff5364",
+        borderVisible: false,
+        wickUpColor: "#00d68f",
+        wickDownColor: "#ff5364"
+    });
+
+    async function loadBTCChart() {
+        try {
+            const response = await fetch(
+                "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1h&limit=120"
+            );
+
+            if (!response.ok) {
+                throw new Error("Failed to load chart");
+            }
+
+            const data = await response.json();
+
+            const candles = data.map(candle => ({
+                time: candle[0] / 1000,
+                open: parseFloat(candle[1]),
+                high: parseFloat(candle[2]),
+                low: parseFloat(candle[3]),
+                close: parseFloat(candle[4])
+            }));
+
+            candleSeries.setData(candles);
+            chart.timeScale().fitContent();
+
+        } catch (error) {
+            console.error("Chart error:", error);
+        }
+    }
+
+    loadBTCChart();
+
+
+    // Responsive chart
+    window.addEventListener("resize", () => {
+        chart.applyOptions({
+            width: chartContainer.clientWidth
+        });
+    });
 
 });
