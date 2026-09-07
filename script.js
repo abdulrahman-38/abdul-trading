@@ -1,53 +1,59 @@
-// التأكد من أن السكريبت يعمل بعد تحميل الصفحة بالكامل
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    // دالة فتح وإغلاق القائمة الجانبية
-    function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("active");
-    }
+    const coins = [
+        { id: "bitcoin", symbol: "BTC" },
+        { id: "ethereum", symbol: "ETH" },
+        { id: "solana", symbol: "SOL" },
+        { id: "binancecoin", symbol: "BNB" }
+    ];
 
-    // ربط زر القائمة بدالة الفتح/الإغلاق
-    document.querySelector(".menu-toggle").addEventListener("click", toggleSidebar);
-
-    // إغلاق القائمة عند الضغط على أي رابط داخلها
-    document.querySelectorAll(".sidebar a").forEach(link => {
-        link.addEventListener("click", () => {
-            document.getElementById("sidebar").classList.remove("active");
-        });
-    });
-
-    // شريط الأسعار المتحرك
-    async function fetchCryptoPrices() {
+    async function fetchPrices() {
         try {
-            const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false');
-            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            const ids = coins.map(c => c.id).join(",");
+
+            const url =
+                `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`;
+
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch prices");
+            }
 
             const data = await response.json();
-            const tickerElement = document.getElementById("crypto-ticker");
-            tickerElement.innerHTML = "";
 
-            data.forEach(coin => {
-                const coinElement = document.createElement("div");
-                coinElement.classList.add("ticker-item");
-                coinElement.innerHTML = `<img src="${coin.image}" width="20"> ${coin.name}: $${coin.current_price}`;
-                tickerElement.appendChild(coinElement);
+            const cards = document.querySelectorAll(".coin-card");
+
+            coins.forEach((coin, index) => {
+                const card = cards[index];
+
+                if (!card || !data[coin.id]) return;
+
+                const price = data[coin.id].usd;
+                const change = data[coin.id].usd_24h_change;
+
+                const priceElement = card.querySelector("span");
+                const changeElement = card.querySelector("small");
+
+                priceElement.textContent =
+                    "$" + Number(price).toLocaleString(undefined, {
+                        maximumFractionDigits: 4
+                    });
+
+                changeElement.textContent =
+                    `${change >= 0 ? "+" : ""}${change.toFixed(2)}%`;
+
+                changeElement.classList.remove("up", "down");
+                changeElement.classList.add(change >= 0 ? "up" : "down");
             });
 
-            // تكرار المحتوى لجعل الشريط المتحرك يعمل بسلاسة
-            const duplicateContent = tickerElement.innerHTML;
-            tickerElement.innerHTML += duplicateContent;
-
-            console.log("✅ تم تحديث بيانات العملات بنجاح!");
         } catch (error) {
-            console.error("❌ خطأ في جلب بيانات العملات الرقمية:", error);
+            console.error("Price update failed:", error);
         }
     }
 
-    // تحديث الأسعار عند تحميل الصفحة
-    fetchCryptoPrices();
+    fetchPrices();
 
-    // تحديث الأسعار كل 60 ثانية
-    setInterval(fetchCryptoPrices, 60000);
+    setInterval(fetchPrices, 60000);
+
 });
-
