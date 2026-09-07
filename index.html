@@ -27,33 +27,116 @@
         </div>
 
         <div class="brand-text">
-          <h1>ALMULLA TRADING</h1>
-          <span>CRYPTO MARKET INTELLIGENCE</span>
+          <h1>
+            ALMULLA
+            <span>TRADING</span>
+          </h1>
+
+          <small>
+            CRYPTO MARKET INTELLIGENCE
+          </small>
         </div>
 
       </div>
 
-      <button class="menu-button" aria-label="Open menu">
-        <span></span>
-        <span></span>
-      </button>
 
-    </div>
+      <div class="header-actions">
 
-    <div class="market-status">
+        <button
+          class="search-button"
+          type="button"
+          aria-label="Search"
+        >
+          <span class="search-icon"></span>
+        </button>
 
-      <div class="market-live">
-        <span class="live-dot"></span>
-        <span>MARKET LIVE</span>
+        <button
+          class="menu-button"
+          type="button"
+          aria-label="Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
       </div>
 
-      <span class="status-line"></span>
+    </div>
 
-      <span class="market-pair">
-        BTC / USDT
-      </span>
+
+    <!-- =========================
+         HEADER MARKET TICKER
+    ========================== -->
+
+    <div class="header-ticker">
+
+      <div class="mini-ticker">
+
+        <div class="mini-coin">
+          <strong>BTC</strong>
+          <span>$62,315</span>
+          <small class="up">+1.42%</small>
+        </div>
+
+        <div class="mini-coin">
+          <strong>ETH</strong>
+          <span>$3,401</span>
+          <small class="up">+0.85%</small>
+        </div>
+
+        <div class="mini-coin">
+          <strong>SOL</strong>
+          <span>$142.6</span>
+          <small class="up">+3.25%</small>
+        </div>
+
+        <div class="mini-coin">
+          <strong>BNB</strong>
+          <span>$577</span>
+          <small class="up">+2.11%</small>
+        </div>
+
+      </div>
 
     </div>
+
+
+    <!-- =========================
+         TOP MENU BAR
+    ========================== -->
+
+    <nav class="top-menu">
+
+      <button
+        class="active"
+        type="button"
+      >
+        <span>⌂</span>
+        <small>Home</small>
+      </button>
+
+      <button type="button">
+        <span>▥</span>
+        <small>Markets</small>
+      </button>
+
+      <button type="button">
+        <span>▤</span>
+        <small>News</small>
+      </button>
+
+      <button type="button">
+        <span>☆</span>
+        <small>Watchlist</small>
+      </button>
+
+      <button type="button">
+        <span>•••</span>
+        <small>More</small>
+      </button>
+
+    </nav>
 
   </header>
 
@@ -65,11 +148,14 @@
   <main class="container">
 
 
-    <!-- MARKET TICKER -->
+    <!-- =========================
+         LIVE PRICE CARDS
+    ========================== -->
 
     <section class="ticker-row">
 
       <div class="coin-card">
+
         <div>
           <strong>BTC</strong>
           <span>$62,315</span>
@@ -78,10 +164,12 @@
         <small class="up">
           +1.42%
         </small>
+
       </div>
 
 
       <div class="coin-card">
+
         <div>
           <strong>ETH</strong>
           <span>$3,401</span>
@@ -90,10 +178,12 @@
         <small class="up">
           +0.85%
         </small>
+
       </div>
 
 
       <div class="coin-card">
+
         <div>
           <strong>SOL</strong>
           <span>$142.6</span>
@@ -102,10 +192,12 @@
         <small class="up">
           +3.25%
         </small>
+
       </div>
 
 
       <div class="coin-card">
+
         <div>
           <strong>BNB</strong>
           <span>$577</span>
@@ -114,6 +206,7 @@
         <small class="up">
           +2.11%
         </small>
+
       </div>
 
     </section>
@@ -149,23 +242,26 @@
 
         <div class="timeframes">
 
-          <button>
+          <button type="button">
             1m
           </button>
 
-          <button>
+          <button type="button">
             5m
           </button>
 
-          <button>
+          <button type="button">
             15m
           </button>
 
-          <button class="active">
+          <button
+            type="button"
+            class="active"
+          >
             1H
           </button>
 
-          <button>
+          <button type="button">
             1D
           </button>
 
@@ -182,23 +278,26 @@
 
       <div class="indicator-tabs">
 
-        <button class="active">
+        <button
+          type="button"
+          class="active"
+        >
           MA
         </button>
 
-        <button>
+        <button type="button">
           EMA
         </button>
 
-        <button>
+        <button type="button">
           BOLL
         </button>
 
-        <button>
+        <button type="button">
           RSI
         </button>
 
-        <button>
+        <button type="button">
           MACD
         </button>
 
@@ -208,7 +307,7 @@
 
 
     <!-- =========================
-         DASHBOARD PANELS
+         DASHBOARD
     ========================== -->
 
     <section class="dashboard-grid">
@@ -453,39 +552,6 @@
 
 
   </main>
-
-
-  <!-- =========================
-       BOTTOM NAVIGATION
-  ========================== -->
-
-  <nav class="bottom-nav">
-
-    <button class="active">
-      <span>⌂</span>
-      الرئيسية
-    </button>
-
-    <button>
-      <span>▥</span>
-      الأسواق
-    </button>
-
-    <button class="trade">
-      <span>↗</span>
-    </button>
-
-    <button>
-      <span>▤</span>
-      الأخبار
-    </button>
-
-    <button>
-      <span>•••</span>
-      المزيد
-    </button>
-
-  </nav>
 
 
   <!-- =========================
