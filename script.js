@@ -362,8 +362,29 @@ async function fetchFearAndGreed() {
         if (labelElement) {
             labelElement.textContent = classification;
         }
+if (valueElement && labelElement) {
 
-    } catch (error) {
+    let color;
+
+    if (value <= 24) {
+        color = "#ff4d5e";      // Extreme Fear
+    } 
+    else if (value <= 44) {
+        color = "#ff8a3d";      // Fear
+    } 
+    else if (value <= 55) {
+        color = "#e7b84c";      // Neutral
+    } 
+    else if (value <= 74) {
+        color = "#00d68f";      // Greed
+    } 
+    else {
+        color = "#00f0a8";      // Extreme Greed
+    }
+
+    valueElement.style.color = color;
+    labelElement.style.color = color;
+}    } catch (error) {
         console.error("Fear & Greed error:", error);
     }
 }
