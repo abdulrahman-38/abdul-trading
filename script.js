@@ -332,4 +332,41 @@ topMenuButtons.forEach(button => {
             });
         }
     });
+
+// =========================================
+// FEAR & GREED INDEX
+// =========================================
+
+async function fetchFearAndGreed() {
+    try {
+        const response = await fetch(
+            "https://api.alternative.me/fng/?limit=1"
+        );
+
+        if (!response.ok) {
+            throw new Error("Fear & Greed request failed");
+        }
+
+        const data = await response.json();
+
+        const value = Number(data.data[0].value);
+        const classification = data.data[0].value_classification;
+
+        const valueElement = document.getElementById("fear-value");
+        const labelElement = document.getElementById("fear-label");
+
+        if (valueElement) {
+            valueElement.textContent = value;
+        }
+
+        if (labelElement) {
+            labelElement.textContent = classification;
+        }
+
+    } catch (error) {
+        console.error("Fear & Greed error:", error);
+    }
+}
+
+fetchFearAndGreed();
 });});
