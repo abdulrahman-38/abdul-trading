@@ -1387,3 +1387,70 @@ button {
   }
 
 }
+/* =========================================
+   LIVE CRYPTO NEWS
+========================================= */
+
+#crypto-news {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#crypto-news .news-item {
+  width: 100%;
+  padding: 13px 14px;
+
+  display: block;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 27, 41, 0.72),
+      rgba(9, 15, 24, 0.45)
+    );
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+#crypto-news .news-item:hover {
+  border-color: rgba(25, 216, 255, 0.25);
+  background: rgba(20, 31, 47, 0.8);
+  transform: translateY(-1px);
+}
+
+#crypto-news .news-content strong {
+  display: block;
+
+  color: #e9eef7;
+
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+#crypto-news .news-content p {
+  margin: 7px 0 0;
+
+  color: #707b8d;
+
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.news-loading {
+  padding: 18px 0;
+
+  color: #737e90;
+
+  font-size: 11px;
+  text-align: center;
+}
