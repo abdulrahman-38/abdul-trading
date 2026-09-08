@@ -287,5 +287,49 @@ if (mainPrice && lastCandle) {
         });
 
     });
+// =========================================
+// TOP MENU NAVIGATION
+// =========================================
 
-});
+const topMenuButtons = document.querySelectorAll(".top-menu button");
+
+const sectionMap = {
+    "Home": "top",
+    "Markets": "markets",
+    "News": "news",
+    "Watchlist": "watchlist"
+};
+
+topMenuButtons.forEach(button => {
+    button.addEventListener("click", () => {
+
+        const label = button.querySelector("small")?.textContent.trim();
+
+        if (!label || label === "More") return;
+
+        topMenuButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        if (label === "Home") {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            return;
+        }
+
+        const sectionId = sectionMap[label];
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+});});
