@@ -390,4 +390,59 @@ if (valueElement && labelElement) {
 }
 
 fetchFearAndGreed();
-});});
+});
+// =========================================
+// CRYPTO NEWS
+// =========================================
+
+async function fetchCryptoNews() {
+    try {
+        const response = await fetch(
+            "https://cryptocurrency.cv/api/news?limit=5"
+        );
+
+        if (!response.ok) {
+            throw new Error("News request failed");
+        }
+
+        const data = await response.json();
+
+        const newsContainer =
+            document.getElementById("crypto-news");
+
+        if (!newsContainer) return;
+
+        newsContainer.innerHTML = "";
+
+        data.articles.forEach(article => {
+
+            const newsItem =
+                document.createElement("a");
+
+            newsItem.className = "news-item";
+
+            newsItem.href = article.link;
+            newsItem.target = "_blank";
+            newsItem.rel = "noopener noreferrer";
+
+            newsItem.innerHTML = `
+                <div class="news-content">
+                    <strong>${article.title}</strong>
+
+                    <p>
+                        ${article.source}
+                        •
+                        ${article.timeAgo || ""}
+                    </p>
+                </div>
+            `;
+
+            newsContainer.appendChild(newsItem);
+        });
+
+    } catch (error) {
+        console.error("Crypto news error:", error);
+    }
+}
+
+fetchCryptoNews();});
